@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load file_filters %}
+
+{% block title %}Detection Results{% endblock %}
+
+{% block body %}
+<h1>Detection Results</h1>
+
+<h3>Original File</h3>
+{% if original_url|endswith:".jpg" or original_url|endswith:".jpeg" or original_url|endswith:".png" %}
+    <img src="{{ original_url }}" alt="Uploaded image" style="max-width: 100%; height: auto;">
+{% elif original_url|endswith:".mp4" or original_url|endswith:".mov" %}
+    <video width="640" height="360" controls>
+        <source src="{{ original_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+{% else %}
+    <p><a href="{{ original_url }}">Download file</a></p>
+{% endif %}
+
+<h3>Detection Output</h3>
+{% if result_url %}
+    {% if result_url|endswith:".jpg" or result_url|endswith:".jpeg" or result_url|endswith:".png" %}
+        <img src="{{ result_url }}" alt="Processed result" style="max-width: 100%; height: auto;">
+    {% elif result_url|endswith:".mp4" or result_url|endswith:".mov" %}
+        <video width="640" height="360" controls>
+            <source src="{{ result_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    {% else %}
+        <p>Result: <a href="{{ result_url }}">Download processed file</a></p>
+    {% endif %}
+{% else %}
+    <p>No result available.</p>
+{% endif %}
+
+<br>
+<a href="{% url 'upload' %}">Back to upload</a>
+{% endblock %}

@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block head %}
+<style>
+  /* Restrict the size of the carousel container */
+  #carouselExampleCaptions {
+    width: 100%; /* Ensure carousel takes full width */
+    height: auto; /* Allow height to scale proportionally */
+    margin: 0 auto; /* Center the carousel horizontally */
+  }
+
+  /* Ensure images fit within the carousel */
+  .carousel-item img {
+    object-fit: cover; /* Adjust to 'cover' to ensure images cover the area */
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Adjust carousel caption position */
+  .carousel-caption {
+    bottom: 10px; /* Move caption a bit higher */
+  }
+
+  /* Adjust control buttons size and position */
+  .carousel-control-prev, .carousel-control-next {
+    width: 5%; /* Make control buttons smaller */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for better centering */
+  }
+
+  /* Mobile responsiveness for images */
+  @media (max-width: 768px) {
+    .carousel-item img {
+      height: 200px; /* Adjust height for mobile */
+    }
+
+    .card-body {
+      padding: 10px; /* Reduce padding in card on mobile */
+    }
+  }
+
+  /* Adjust layout for smaller screens */
+  .card-img-top {
+    height: 180px; /* Limit card image size */
+    object-fit: cover; /* Ensure images fit without distortion */
+  }
+
+  /* Ensure full-width display for smaller screens */
+  .col-md-4, .carousel-item {
+    flex: 1 0 100%; /* Make it take full width on small screens */
+  }
+
+  /* Improve responsiveness of carousel */
+  @media (max-width: 576px) {
+    .carousel-item img {
+      height: 150px; /* Adjust height for smaller screens */
+    }
+  }
+  
+  /* Card grid for mobile devices */
+  .card-columns {
+    column-count: 1;
+  }
+  .card-columns .card {
+    margin-bottom: 15px;
+  }
+
+</style>
+{% endblock head %}
+
+{% block body %}
+<div class="container-fluid px-0">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/static/4.jpg" class="d-block w-100" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Chicken</h5>
+          <p>35 Days Chicken</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/static/5.jpg" class="d-block w-100" alt="Second slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Hen</h5>
+          <p>21 Days Hen</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/static/3.jpg" class="d-block w-100" alt="Third slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Ducks</h5>
+          <p>Swarm of Ducks</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="container my-4">
+  <h1 class="my-4 text-center">Select the images for classification:</h1>
+  <div class="row">
+    <div class="col-sm-12 col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <img src="/static/19.jpg" class="card-img-top" alt="Disease in chickens">
+        <div class="card-body">
+          <p class="card-text">Disease in chickens can lead to symptoms like poor appetite, and reduced egg production, requiring prompt treatment.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <img src="/static/2.jpg" class="card-img-top" alt="Healthy chickens">
+        <div class="card-body">
+          <p class="card-text">Healthy chickens are strong, active, and disease-free, ensuring optimal growth and productivity.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <img src="/static/20.jpg" class="card-img-top" alt="Chicks">
+        <div class="card-body">
+          <p class="card-text">Chicks are small, vulnerable, and need proper care, warmth, and nutrition to grow into healthy adult chickens.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <img src="/static/21.jpg" class="card-img-top" alt="Chicken vaccine">
+        <div class="card-body">
+          <p class="card-text">A chicken vaccine helps prevent the spread of infectious diseases among poultry, ensuring better health.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <img src="/static/22.jpg" class="card-img-top" alt="Medicine pills">
+        <div class="card-body">
+          <p class="card-text">Medicine pills are oral doses of medication designed to treat or manage specific health conditions efficiently.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <img src="/static/23.jpg" class="card-img-top" alt="Emergency services">
+        <div class="card-body">
+          <p class="card-text">Emergency services provide immediate medical assistance in critical situations to prevent further harm or save lives.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

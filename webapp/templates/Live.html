@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %} <!-- Load the static files tag library -->
+
+{% block title %}
+Live
+{% endblock title %}
+
+{% block body %}
+<br>
+<div class="text-center">
+    <p>This feature will be implemented next semester alongside the integration of the model. The design is prepared for seamless functionality, ensuring dynamic interaction and real-time insights once the model is ready.</p>
+</div>
+
+<!-- Image Section -->
+<div class="image-section my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center mb-4 mb-md-0">
+            <img src="{% static '18.jpg' %}" alt="Image showcasing live detection" class="img-fluid" style="height: 300px; object-fit: cover;">
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="{% static '17.jpg' %}" alt="Image showcasing live detection" class="img-fluid" style="height: 300px; object-fit: cover;">
+        </div>
+    </div>
+</div>
+{% endblock body %}

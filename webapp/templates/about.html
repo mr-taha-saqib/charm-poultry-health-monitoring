@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load static %} <!-- Load the static files tag library -->
+
+{% block title %}About Us{% endblock title %}
+
+{% block body %}
+<div class="about-us-section">
+    <div class="container">
+        <center>
+            <h1>About Us</h1>
+            <p>Welcome to the About Us page! At CHARM (Chicken Health Assessment and Remote Monitoring), we use cutting-edge AI to revolutionize poultry disease diagnosis and management. Our focus is on combating major diseases like infectious coryza, fowl cholera, and fowl pox, as well as addressing general health concerns in chickens. By providing fast, easy-to-use diagnostic tools, we empower farmers to protect their flocks, reduce losses, and ensure a sustainable food supply. Together, we’re transforming poultry health care for a healthier, more efficient industry.</p>
+        </center>
+    </div>
+</div>
+
+<!-- Image Section -->
+<div class="image-section my-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-4 mb-md-0">
+                <img src="{% static '8.jpg' %}" alt="Image 12" class="img-fluid" style="height: 300px; object-fit: cover;">
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{% static '10.jpg' %}" alt="Image 10" class="img-fluid" style="height: 300px; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

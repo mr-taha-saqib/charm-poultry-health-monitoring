@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+File Upload
+{% endblock title %}
+
+{% block body %}
+<script>
+    const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50 MB in bytes
+
+    function validateFileSize() {
+        const fileInput = document.getElementById('fileInput');
+        const file = fileInput.files[0];
+        const errorDiv = document.getElementById('error');
+        errorDiv.textContent = ''; // Clear previous errors
+
+        if (file && file.size > MAX_FILE_SIZE) {
+            errorDiv.textContent = 'File size exceeds the 50MB limit.';
+            fileInput.value = ''; // Clear the input if invalid
+            return false;
+        }
+        return true;
+    }
+</script>
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Upload a File</h2>
+
+    <!-- Error display for file size -->
+    <div id="error" style="color:red;" class="text-center mb-3"></div>
+
+    <!-- File upload form -->
+    <form method="post" action="{% url 'upload' %}" enctype="multipart/form-data" onsubmit="return validateFileSize()">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="fileInput" class="font-weight-bold">Select File:</label>
+            <input type="file" name="file" id="fileInput" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-info btn-block">Upload</button>
+    </form>
+
+    <!-- Display Django messages -->
+    {% if messages %}
+        <div class="mt-4">
+            {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endblock body %}

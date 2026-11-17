@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+myenv/
+pyvenv.cfg
+
+# Django
+webapp/db.sqlite3
+webapp/media/
+webapp/staticfiles/
+
+# Model weights (download separately, see README)
+webapp/models/
+*.pt
+*.pth
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Env / OS
+.env
+.DS_Store
+Thumbs.db

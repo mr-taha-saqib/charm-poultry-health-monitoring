@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>{% block title %}Home{% endblock title %} | CHARM</title>
+    <style>
+      /* Navbar styling */
+      .navbar-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .navbar-nav .nav-item {
+        margin: 0 15px; /* Adjust spacing between nav items */
+      }
+
+      .navbar-nav .nav-link {
+        text-decoration: none;
+        color: white;
+        font-size: 18px; /* Adjust font size if needed */
+      }
+
+      .navbar-nav .nav-link:hover {
+        text-decoration: underline; /* Optional hover effect */
+      }
+
+      /* Mobile responsiveness */
+      @media (max-width: 768px) {
+        .navbar-nav .nav-item {
+          margin: 0 10px; /* Adjust spacing for mobile */
+        }
+
+        .navbar-nav .nav-link {
+          font-size: 16px; /* Adjust font size for mobile */
+        }
+
+        /* Navbar brand logo */
+        .navbar-brand img {
+          height: 70px; /* Adjust logo size on smaller screens */
+        }
+      }
+
+      /* Footer styling */
+      footer {
+        background-color: #4A918B;
+        color: white;
+      }
+
+      /* Container styling */
+      .container {
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4A918B;">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="{% static 'logo.jpg' %}" alt="CHARM Logo" style="height: 90px; margin-right: 20px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+     
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'upload' %}">Upload & Result</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/live">Live Detection</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+      {% block body %}{% endblock body %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        &copy; 2025 CHARM. All Rights Reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

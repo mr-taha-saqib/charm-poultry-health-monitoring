@@ -1,0 +1,5 @@
+# Lightweight set for tests and CI: the models are never loaded in tests,
+# so PyTorch and Ultralytics are not needed.
+Django>=5.1,<6.0
+numpy>=1.26
+opencv-python-headless>=4.9
